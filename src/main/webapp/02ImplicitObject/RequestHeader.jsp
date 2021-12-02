@@ -15,6 +15,8 @@
 		반환타입은 Enumeration으로 
 		hasMoreElements() : 출력할 정보가 있는지 확인하여 boolean값을 반환한다. 
 		nextElement() : 헤더명을 반환한다.
+		
+		이전 컬렉션에 iterator에서 hasNext로 가져와 next로 반환하는 형식과 비슷하다.
 	*/
 	Enumeration headers = request.getHeaderNames();
 	while(headers.hasMoreElements()){
