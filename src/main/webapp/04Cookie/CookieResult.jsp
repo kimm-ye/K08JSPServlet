@@ -17,9 +17,6 @@
 			out.println(String.format("쿠키명 : %s - 쿠키값 : %s<br>", cookieName, cookieValue));
 		}
 	}
-	/*
-	
-	*/
 	%>
 </body>
 </html>
