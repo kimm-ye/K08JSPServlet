@@ -25,11 +25,11 @@ if(cookies != null){
 <style>
 	/*위에 띄우기 위한 스타일 속성*/
 	div#popup{
-		position: absolute; top:100px; left:100px; color:yellow;
+		position: absolute; top:100px; left:100px; color:yellow; /*absolute는 절대좌표와 함께 위치 지정가능*/
 		width:300px; height:100px; background-color:gray;
 	}
 	div#popup>div{
-		position: relative; background-color: #ffffff; top:0px;
+		position: relative; background-color: #ffffff; top:0px; /*relative는 부모엘리먼트 기준 위치 지정가능*/
 		border: 1px solid gray; padding: 10px; color:black;
 	}
 </style>

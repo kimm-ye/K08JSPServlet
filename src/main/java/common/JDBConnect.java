@@ -16,6 +16,7 @@ public class JDBConnect {
 	
 	//기본 생성자
 	public JDBConnect() {
+		//DB작업을 할때마다 생성하고 삭제하고 쓰고 삭제하고 (유수풀에서 튜브 빌리고 터트리고 빌리고, 터트리고)
 		try {
 			//오라클 드라이버 로드
 			Class.forName("oracle.jdbc.OracleDriver");

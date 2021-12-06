@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 //쿠키생성, 삭제, 읽기를 위한 유틸리티 클래스
 public class CookieManager {
 	
-	//쿠키생성 ㅣ 생성시 response 내장객체가 있어야 하므로 매개변수로 받아야 함.
+	//쿠키생성 : 생성시 response 내장객체가 있어야 하므로 매개변수로 받아야 함.
 	public static void makeCookie(HttpServletResponse response, String cName, String cValue, int cTime) {
 		Cookie cookie = new Cookie(cName, cValue);  //생성자를 통해 쿠키 생성 (쿠키명, 쿠키값)
 		cookie.setPath("/");						// 경로설정
