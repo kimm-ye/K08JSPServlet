@@ -9,7 +9,7 @@
 <body>
 	<h2>외부 파일 2</h2>
 	<%
-	String newVar2 = "백제 온조왕"; //컴파일되면서 newVar2는 사라짐
+	String newVar2 = "백제 온조왕"; //컴파일되면서 newVar2는 사라짐 (컴파일 되면 HTML 코드밖에 안남기때문)
 	%>
 	<ul>
 		<li>page 영역 속성 : <%= pageContext.getAttribute("pAttr") %></li>

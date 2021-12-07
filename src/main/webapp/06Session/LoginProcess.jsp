@@ -3,8 +3,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+
 //로그인 폼에서 사용자가 입력한 아이디, 패스워드 받기
-String userId = request.getParameter("user_id");
+String userId = request.getParameter("user_id"); 
 String userPwd = request.getParameter("user_pw");
 
 //application 내장객체를 통해 web.xml에 저장된 오라클 접속정보를 읽어옴
@@ -42,6 +43,6 @@ else{
 	*/
 	request.setAttribute("LoginErrMsg", "로그인 오류입니다.");
 	//로그인 페이지로 포워드(페이지 전달)한다.
-	request.getRequestDispatcher("LoginForm.jsp").forward(request, response);
+	request.getRequestDispatcher("LoginForm.jsp").forward(request, response); //포워드를 걸 페이지를 넣고, 포워드 명령어 넣기 requset와 response를 넘긴다.
 }
 %>

@@ -52,10 +52,12 @@ public class JDBConnect {
 	//세번째 생성자
 	public JDBConnect(ServletContext application) {
 		
+		//web.xml에 저장된 오라클 접속정보를 얻어온다.
 		String driver = application.getInitParameter("OracleDriver");
 		String url = application.getInitParameter("OracleURL");
 		String id = application.getInitParameter("OracleId");
 		String pwd = application.getInitParameter("OraclePwd");
+		
 		try {
 			//JDBC 드라이버 로드
 			Class.forName("oracle.jdbc.OracleDriver");
