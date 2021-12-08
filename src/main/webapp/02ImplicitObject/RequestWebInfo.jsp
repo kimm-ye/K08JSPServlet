@@ -13,7 +13,7 @@
 		<li>데이터 전송방식 : <%= request.getMethod() %></li>
 		<!-- URL은 현재 접속한 전체 경로를 반환한다. -->
 		<li>URL : <%= request.getRequestURL() %></li>
-		<!-- URI에서 HOST 부분을 제외한 경로를 반환한다. -->
+		<!-- URL에서 HOST 부분을 제외한 경로를 반환한다. -->
 		<li>URI : <%= request.getRequestURI() %></li>
 		<li>프로토콜 : <%= request.getProtocol() %></li>
 		<li>서버명 : <%= request.getServerName() %></li>
