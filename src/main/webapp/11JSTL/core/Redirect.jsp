@@ -8,11 +8,11 @@
 	<!--  
 	redirect태그
 		: 새로운 페이지에 대한 요청이므로 request영역은 공유되지 않는다. 
-		절대경로로 설정시 url속성에 컨텍스트 루트는 제외한다. 
+		절대경로로 설정시 url속성에 컨텍스트 루트는 제외한다. (절대경로로 걸었을때)
 		즉, 페이지 이동시 사용한다. 
 	-->
     <c:set var="requestVar" value="MustHave" scope="request" />
-    <c:redirect url="/11JSTL/inc/OtherPage.jsp">
+    <c:redirect url="/11JSTL/inc/OtherPage.jsp"> 
         <c:param name="user_param1" value="출판사" />
         <c:param name="user_param2" value="골든래빗" />
     </c:redirect>
