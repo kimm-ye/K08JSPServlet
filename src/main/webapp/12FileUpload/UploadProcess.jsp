@@ -70,6 +70,7 @@ try{
 	//DAO객체 생성 및 insert 처리
 	MyfileDAO dao = new MyfileDAO();
 	dao.insertFile(dto);
+	//커넥션 풀이니까 자원해제가 아닌 자원반납
 	dao.close();
 	
 	//입력에 문제가 없다면 FileList.jsp로 이동한다.

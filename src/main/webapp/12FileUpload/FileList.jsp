@@ -45,7 +45,7 @@
 			<td><%= f.getPostdate() %></td>
 			<!-- 원본파일명이 한글인 경우 깨짐방지를 위해 URL 인코딩 처리를 한다. -->
 			<!-- 페이지 소스보기에서 보면 한글로 된 파일명은 인코딩 처리되어있다. -->
-			<td><a href="Download.jsp?oName<%= URLEncoder.encode(f.getOfile(),"UTF-8") %>&sName<%= URLEncoder.encode(f.getSfile(),"UTF-8") %>">[다운로드]</a></td>
+			<td><a href="Download.jsp?oName=<%= URLEncoder.encode(f.getOfile(),"UTF-8") %>&sName=<%= URLEncoder.encode(f.getSfile(),"UTF-8") %>">[다운로드]</a></td>
 		</tr>
 	<%} %>
 	</table>
