@@ -10,6 +10,7 @@ public class ZipcodeDAO extends DBConnPool {
 	public ArrayList<String> getSido(){
 		ArrayList<String> sidoAddr = new ArrayList<String>();
 		
+		//여기서 where 1=1을 쓴 이유는 true임을 말한다. distinct는 중복제거한 거임
 		String sql = " SELECT distinct sido FROM zipcode WHERE 1=1 ORDER BY sido ASC ";
 		
 		try {

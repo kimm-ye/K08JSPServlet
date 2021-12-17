@@ -23,69 +23,69 @@ dao.close();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 $(function() {
-	$('#sido').change(function() {
-		$.ajax({
+   	$('#sido').change(function() {
+      	$.ajax({
 			url : "../DynamicAddress.do",
 			type : "get",
 			contentType : "text/html; charset:UTF-8;",
 			data : { //파라미터 : 사용자가 선택한 시/도
 				sido : $('#sido option:selected').val()
 			},
-			dataType : "json",
-			success:function(d){
-				console.log("콜백데이터", d);
-				var optionStr="";
-				optionStr += "<option value=''>-구군선택-</option>";
-				//콜백받은 JSON 배열을 통해 each()메소드 실행
-				$.each(d, function(index, data) {
-					console.log(index, data);
-					//JSON 배열의 크기만큼 option 태그 생성
-					optionStr += '<option value="'+ data +'">'+data+'</option>';
-				});
-				//새로운 내용으로 select태그에 삽입함 (append쓰면 계속 결과가 누적되므로 이전 결과가 사라지는 html사용)
-				$('#gugun').html(optionStr);
-			},
-			error:function(e){
-				alert("오류발생:" + e.status + ":" + e.statusText);
-			}
+		    dataType : "json",
+		    success:function(d){
+		    	console.log("콜백데이터", d);
+		    	var optionStr="";
+		    	optionStr += "<option value=''>-구군선택-</option>";
+		      //콜백받은 JSON 배열을 통해 each()메소드 실행
+		    	$.each(d, function(index, data) {
+		        	console.log(index, data);
+		         //JSON 배열의 크기만큼 option 태그 생성
+		        	optionStr += '<option value="'+ data +'">'+data+'</option>';
+		    	});
+		      //새로운 내용으로 select태그에 삽입함 (append쓰면 계속 결과가 누적되므로 이전 결과가 사라지는 html사용)
+		      	$('#gugun').html(optionStr);
+		    },
+		    error:function(e){
+		    	alert("오류발생:" + e.status + ":" + e.statusText);
+		    }
 		});
 	});
-	
-	//확인용 : 선택한 시/도와 구/군을 alert로 출력
-	$('#gugun').change(function(){
-		var sido = $('#sido option:selected').val();
-		var gugun = $('#gugun option:selected').val();
-		alert(sido + " " + gugun + " 선택함");
-	});
+   
+   //확인용 : 선택한 시/도와 구/군을 alert로 출력
+    $('#gugun').change(function(){
+    	var sido = $('#sido option:selected').val();
+    	var gugun = $('#gugun option:selected').val();
+    	alert(sido + " " + gugun + " 선택함");
+    });
 });
+
 </script>
 </head>
 <body>
 <div class="container">
     <div class="row">
-   	 <h2>우편번호DB를 이용한 시도/구군 동적셀렉트 구현</h2>
+       <h2>우편번호DB를 이용한 시도/구군 동적셀렉트 구현</h2>
     </div>
     <form id="zipFrm">
-    <div class="row">   	 
+    <div class="row">       
 		<div class="col-4">
-		 시/도:
-		<select id="sido" class="form-control">
-			<option value="">-시/도선택하삼-</option>
-		 <!-- page영역에 저장된 내용을 출력 -->
-		<c:forEach items="${sidoList }" var="sidoStr">
-			<option value="${sidoStr }">${sidoStr }</option>
-		</c:forEach>
-		</select>
-		</div>
-		<div class="col-8">
-		 구/군:
-		<select id="gugun" class="form-control">
-			<option value="">-구/군선택하삼-</option>
-		</select>
-		</div>   	 
+			시/도:
+			<select id="sido" class="form-control">
+				<option value="">-시/도선택하삼-</option>
+			 <!-- page영역에 저장된 내용을 출력 -->
+			<c:forEach items="${sidoList }" var="sidoStr">
+				<option value="${sidoStr }">${sidoStr }</option>
+			</c:forEach>
+			</select>
+			</div>
+			<div class="col-8">
+			 구/군:
+			<select id="gugun" class="form-control">
+				<option value="">-구/군선택하삼-</option>
+			</select>
+		</div>       
     </div>
     </form>
 </div>
-
 </body>
 </html>

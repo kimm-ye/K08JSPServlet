@@ -36,7 +36,9 @@ $(document).ready(function() {
 				//합산된 금액을 다시 totalprice에 더한다.
 				//계산된 가격을 다시 hidden박스에 적용한다.
 				$('#totalPrice').val(totalPrice);
+				
 				//웹브라우저에 총 금액을 출력한다.
+				totalPrice = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); //콤마추가하기
 				$('#priceDisplay').html("총상품금액: " +totalPrice);
 				
 				//콜백된 데이터를 통해 옵션 테이블을 생성한다.
@@ -52,7 +54,7 @@ $(document).ready(function() {
 					+ '</table>';
 				console.log(d);
 				
-				//웹브라우저에 추가한다.
+				//웹브라우저에 추가한다. 옵션을 선택하면 계속 추가되어야 하므로 append를 사용한다
 				$('#goodsList').append(table);
 				
 				//옵션을 선택한 후 최초 상태로 리셋한다.
@@ -117,8 +119,8 @@ function imgChange(imgSrc) {
 			<td>
 				<select id="goodsOptionId01">
 					<option value="">선택하삼</option>
-					<option value="op01">옵션1(+5000)</option>
-					<option value="op02">옵션2(+7000)</option>
+					<option value="op01">옵션1(+5,000)</option>
+					<option value="op02">옵션2(+7,000)</option>
 					<option value="op03">옵션3(+10,000)</option>
 				</select>
 			</td>

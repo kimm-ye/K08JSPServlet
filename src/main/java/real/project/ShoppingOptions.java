@@ -24,15 +24,18 @@ public class ShoppingOptions extends HttpServlet {
 		String gName = req.getParameter("goodsOptionName");
 		if(gName.equals("op01")) {
 			json.put("optionName", "매우좋은옵션");
-			json.put("optionPrice", 5000);
+			//json.put("optionPrice", 5000);
+			json.put("optionPrice", "5,000");
 		}
 		else if(gName.equals("op02")) {
 			json.put("optionName", "졸라좋은옵션");
-			json.put("optionPrice", 7000);
+			//json.put("optionPrice", 7000);
+			json.put("optionPrice", "7,000");
 		}
 		else if(gName.equals("op03")) {
 			json.put("optionName", "기깔나는옵션");
-			json.put("optionPrice", 10000);
+			//json.put("optionPrice", 10000);
+			json.put("optionPrice", "10,000");
 		}
 		
 		//앞에서 만든 JSON객체를 문자열로 변환 후 화면에 출력한다.

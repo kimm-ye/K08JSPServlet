@@ -3,7 +3,14 @@ package utils;
 //게시판 목록 하단에 페이지 번호를 출력하기 위한 클래스
 public class BoardPage {
 	
-	//매개변수(전체게시물갯수, 한페이지출력갯수, 한블럭당출력페이지수, 현재페이지번호, 현재페이지명)
+	/*
+		totalCount  : 전체 게시물의 갯수
+		pageSize	: 한 페이지에 출력할 게시물의 갯수 
+		blockPage	: 한 블럭당 출력할 페이지 번호의 갯수
+		pageNum		: 현재 진입한 목록의 페이지 번호
+		reqUrl		: 현재 목록을 실행한 JSP 파일의 경로 혹은 요청명
+	*/
+	//매개변수
 	public static String pagingStr(int totalCount, int pageSize, int blockPage, int pageNum, String reqUrl) {
 		
 		String pagingStr ="";
@@ -17,6 +24,7 @@ public class BoardPage {
 		
 		//이전 블럭으로 바로가기 링크 (첫번째 블럭에서는 숨김처리)
 		//항상 바뀌는 파일명을 가져오기 위해 reqUrl
+		
 		if(pageTemp != 1) {
 			pagingStr += "<a href='" + reqUrl + "?pageNum=1'>[첫 페이지]</a>";
 			pagingStr += "&nbsp;";
